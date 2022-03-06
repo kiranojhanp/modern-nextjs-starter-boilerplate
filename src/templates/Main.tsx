@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 
+import Body from '@/components/Body';
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import { AppConfig } from '@/utils/AppConfig';
 
 type IMainProps = {
   meta: ReactNode;
@@ -15,12 +16,8 @@ const Main = (props: IMainProps) => (
 
       <div className="mx-auto max-w-screen-md">
         <Navbar />
-
-        <main className="py-5 text-xl content">{props.children}</main>
-
-        <footer className="py-8 text-sm text-center border-t border-gray-300">
-          © Copyright {new Date().getFullYear()} {AppConfig.title}
-        </footer>
+        <Body>{props.children}</Body>
+        <Footer />
       </div>
     </div>
   </>

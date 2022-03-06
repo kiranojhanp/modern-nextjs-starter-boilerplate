@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -8,7 +8,7 @@ type INavItem = {
   children: ReactNode;
 };
 
-const NavItem: FC<INavItem> = (props) => {
+const NavItem = (props: INavItem) => {
   const router = useRouter();
 
   return (
