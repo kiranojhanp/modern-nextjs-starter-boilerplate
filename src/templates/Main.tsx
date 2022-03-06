@@ -14,56 +14,40 @@ const Main = (props: IMainProps) => (
     {props.meta}
 
     <div className="mx-auto max-w-screen-md">
-      <div className="border-b border-gray-300">
+      <nav className="border-b border-gray-300">
         <div className="pt-16 pb-8">
-          <div className="text-3xl font-bold text-gray-900">
-            {AppConfig.title}
-          </div>
-          <div className="text-xl">{AppConfig.description}</div>
+          <Link href="/">
+            <a className="text-3xl font-bold text-gray-900 hover:text-gray-700 border-none">
+              {AppConfig.title}
+            </a>
+          </Link>
+          <p className="text-xl">{AppConfig.description}</p>
         </div>
-        <div>
-          <ul className="flex flex-wrap text-xl">
-            <li className="mr-6">
-              <Link href="/">
-                <a className="text-gray-700 hover:text-gray-900 border-none">
-                  Home
-                </a>
-              </Link>
-            </li>
-            <li className="mr-6">
-              <Link href="/about/">
-                <a className="text-gray-700 hover:text-gray-900 border-none">
-                  About
-                </a>
-              </Link>
-            </li>
-            <li className="mr-6">
-              <a
-                className="text-gray-700 hover:text-gray-900 border-none"
-                href="https://github.com/ixartz/Next-js-Boilerplate"
-              >
-                GitHub
+
+        <ul className="flex flex-wrap text-xl">
+          <li className="mr-6">
+            <Link href="/">
+              <a className="text-gray-700 hover:text-gray-900 border-none">
+                Home
               </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+            </Link>
+          </li>
 
-      <div className="py-5 text-xl content">{props.children}</div>
+          <li className="mr-6">
+            <Link href="/about/">
+              <a className="text-gray-700 hover:text-gray-900 border-none">
+                About
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
 
-      <div className="py-8 text-sm text-center border-t border-gray-300">
-        © Copyright {new Date().getFullYear()} {AppConfig.title}. Powered with{' '}
-        <span role="img" aria-label="Love">
-          ♥
-        </span>{' '}
-        by <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>
-        {/*
-         * PLEASE READ THIS SECTION
-         * We'll really appreciate if you could have a link to our website
-         * The link doesn't need to appear on every pages, one link on one page is enough.
-         * Thank you for your support it'll mean a lot for us.
-         */}
-      </div>
+      <main className="py-5 text-xl content">{props.children}</main>
+
+      <footer className="py-8 text-sm text-center border-t border-gray-300">
+        © Copyright {new Date().getFullYear()} {AppConfig.title}
+      </footer>
     </div>
   </div>
 );
