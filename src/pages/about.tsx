@@ -1,9 +1,5 @@
-import { Meta } from '@/layout/Meta';
 import { Main } from '@/templates/Main';
-
-const AboutMeta = () => (
-  <Meta title="About Page" description="This is the about page" />
-);
+import { AboutMeta } from '@/utils/MetaConfig';
 
 const About = () => (
   <Main meta={<AboutMeta />}>
