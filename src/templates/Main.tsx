@@ -14,7 +14,7 @@ const Main = (props: IMainProps) => (
     <div className="px-1 w-full antialiased text-gray-700">
       {props.meta}
 
-      <div className="mx-auto max-w-screen-md">
+      <div className="flex flex-col justify-between mx-auto max-w-screen-md min-h-screen">
         <Navbar />
         <Body>{props.children}</Body>
         <Footer />

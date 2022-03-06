@@ -8,7 +8,7 @@ import { AppConfig } from '@/utils/AppConfig';
 const index = () => {
   return (
     <nav className="border-b border-gray-300 navbar">
-      <div className="pt-16 pb-8">
+      <div className="py-8">
         <Link href="/">
           <a className="text-3xl font-bold text-gray-900 hover:text-gray-700 border-none">
             {AppConfig.title}
