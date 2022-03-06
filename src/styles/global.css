@@ -19,3 +19,11 @@ a:hover {
 .content ul {
   @apply my-6;
 }
+
+.navbar ul > li > a {
+  @apply text-gray-700 hover:text-gray-900 active:text-orange-500 border-none
+}
+
+.navbar ul > li > .active-link {
+  @apply text-orange-400 hover:text-orange-600 
+}

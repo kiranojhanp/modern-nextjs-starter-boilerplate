@@ -1,8 +1,12 @@
 import { Meta } from '@/layout/Meta';
 import { Main } from '@/templates/Main';
 
+const AboutMeta = () => (
+  <Meta title="About Page" description="This is the about page" />
+);
+
 const About = () => (
-  <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
+  <Main meta={<AboutMeta />}>
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione fuga
       recusandae quidem. Quaerat molestiae blanditiis doloremque possimus labore
