@@ -1,0 +1,3 @@
+.place-center-x {
+  @apply flex justify-center
+}

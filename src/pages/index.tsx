@@ -1,34 +1,20 @@
-import axios from 'axios';
-import { useQuery } from 'react-query';
-
+import useStore from '@/stores/HomeStore';
 import { Main } from '@/templates/Main';
 import { HomeMeta } from '@/utils/MetaConfig';
 
 const Index = () => {
-  const { isLoading, error, data, isFetching } = useQuery('repoData', () =>
-    axios
-      .get('https://api.github.com/repos/tannerlinsley/react-query')
-      .then((res) => res.data)
-  );
-
-  if (isLoading) return <Main meta={<HomeMeta />}>Loading...</Main>;
-
-  if (error)
-    return (
-      <Main meta={<HomeMeta />}>
-        An error has occurred: ${JSON.stringify(error)}
-      </Main>
-    );
-
+  const { count, inc, dec } = useStore();
   return (
     <Main meta={<HomeMeta />}>
-      <h1>Hello World</h1>
-      <code>{data.name}</code>
-      <p>{data.description}</p>
-      <strong>👀 {data.subscribers_count}</strong>{' '}
-      <strong>✨ {data.stargazers_count}</strong>{' '}
-      <strong>🍴 {data.forks_count}</strong>
-      <div>{isFetching ? 'Updating...' : ''}</div>
+      <h1 className="text-6xl font-bold text-center">{count}</h1>
+      <div className=" place-center-x">
+        <button className="mr-4 btn btn-danger" onClick={dec}>
+          -1
+        </button>
+        <button className="btn btn-primary" onClick={inc}>
+          +1
+        </button>
+      </div>
     </Main>
   );
 };
