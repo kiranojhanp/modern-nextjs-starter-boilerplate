@@ -1,5 +1,5 @@
-@import url("navbar.scss");
-@import url("link.scss");
+@import url("navbar.css");
+@import url("link.css");
 
 @tailwind base;
 @tailwind components;
